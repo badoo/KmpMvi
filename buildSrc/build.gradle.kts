@@ -12,7 +12,6 @@ dependencies {
     implementation(Deps.Jetbrains.Kotlin.Plugin.Serialization)
     implementation(Deps.Android.Tools.Build.Gradle)
     implementation(Deps.TouchLab.KotlinXcodeSync)
-    implementation(Deps.Squareup.SqlDelight.GradlePlugin)
 }
 
 kotlin {

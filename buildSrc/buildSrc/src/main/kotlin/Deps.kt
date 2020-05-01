@@ -96,9 +96,6 @@ object Deps {
             object Reaktive :
                 Dependency(group = Badoo.Reaktive, name = "reaktive", version = version)
 
-            object ReaktiveAnnotations :
-                Dependency(group = Badoo.Reaktive, name = "reaktive-annotations", version = version)
-
             object ReaktiveTesting :
                 Dependency(group = Badoo.Reaktive, name = "reaktive-testing", version = version)
 
@@ -109,21 +106,6 @@ object Deps {
     object TouchLab : Group(name = "co.touchlab") {
         object KotlinXcodeSync :
             Dependency(group = TouchLab, name = "kotlinxcodesync", version = "0.2")
-    }
-
-    object Squareup {
-        object SqlDelight : Group(name = "com.squareup.sqldelight") {
-            private const val version = "1.2.2"
-
-            object GradlePlugin :
-                Dependency(group = SqlDelight, name = "gradle-plugin", version = version)
-
-            object AndroidDriver :
-                Dependency(group = SqlDelight, name = "android-driver", version = version)
-
-            object NativeDriver :
-                Dependency(group = SqlDelight, name = "native-driver", version = version)
-        }
     }
 
     open class Group(val name: String)
