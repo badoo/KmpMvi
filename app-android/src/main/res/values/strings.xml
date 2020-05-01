@@ -1,0 +1,6 @@
+<resources>
+
+    <string name="app_name">KmpMvi</string>
+    <string name="load_kitten">Load Kitten</string>
+    <string name="error_loading_kittens">Error loading kittens :-(</string>
+</resources>
