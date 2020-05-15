@@ -9,6 +9,7 @@ import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.getValue
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 fun Project.setupMultiplatform() {
@@ -75,6 +76,25 @@ fun Project.setupAndroidSdkVersions() {
             targetSdkVersion(29)
             minSdkVersion(21)
         }
+    }
+}
+
+// Workaround since iosX64() and iosArm64() function are not resolved if used in a module with Kotlin 1.3.70
+fun Project.setupKittensBinaries() {
+    fun KotlinNativeTarget.setupIosBinaries() {
+        binaries {
+            framework {
+                baseName = "Kittens"
+                freeCompilerArgs = freeCompilerArgs.plus("-Xobjc-generics").toMutableList()
+
+                export(project(":shared:mvi"))
+            }
+        }
+    }
+
+    kotlin {
+        iosX64().setupIosBinaries()
+        iosArm64().setupIosBinaries()
     }
 }
 

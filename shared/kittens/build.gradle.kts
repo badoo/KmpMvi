@@ -3,6 +3,7 @@ plugins {
 }
 
 setupMultiplatform()
+setupKittensBinaries()
 
 kotlin {
     sourceSets {
