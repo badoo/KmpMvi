@@ -78,6 +78,10 @@ object Deps {
                 version = "1.1.3"
             )
         }
+
+        object SwypeRefreshLayout : Group(name = "androidx.swiperefreshlayout") {
+            object SwypeRefreshLayout : Dependency(group = AndroidX.SwypeRefreshLayout, name = "swiperefreshlayout", version = "1.0.0")
+        }
     }
 
     object Google {
@@ -106,6 +110,12 @@ object Deps {
     object TouchLab : Group(name = "co.touchlab") {
         object KotlinXcodeSync :
             Dependency(group = TouchLab, name = "kotlinxcodesync", version = "0.2")
+    }
+
+    object Squareup {
+        object Picasso : Group(name = "com.squareup.picasso") {
+            object Picasso : Dependency(group = Squareup.Picasso, name = "picasso", version = "2.71828")
+        }
     }
 
     open class Group(val name: String)
