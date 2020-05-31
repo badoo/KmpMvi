@@ -8,17 +8,17 @@ import com.badoo.kmpmvi.shared.kittens.integration.toIntent
 import com.badoo.kmpmvi.shared.kittens.integration.toModel
 import com.badoo.kmpmvi.shared.kittens.store.KittenStore.State
 import com.badoo.kmpmvi.shared.kittens.store.KittenStoreImpl
-import com.badoo.reaktive.annotations.ExperimentalReaktiveApi
 import com.badoo.reaktive.disposable.scope.DisposableScope
 import com.badoo.reaktive.disposable.scope.disposableScope
 import com.badoo.reaktive.observable.map
 
-@OptIn(ExperimentalReaktiveApi::class)
-class KittenComponent {
+class KittenComponent internal constructor(dataSource: KittenDataSource) {
+
+    constructor() : this(KittenDataSource())
 
     private val store =
         KittenStoreImpl(
-            network = KittenStoreNetwork(dataSource = KittenDataSource()),
+            network = KittenStoreNetwork(dataSource = dataSource),
             parser = KittenStoreParser
         )
 
@@ -39,7 +39,7 @@ class KittenComponent {
     }
 
     fun onStop() {
-        startStopScope?.dispose()
+        requireNotNull(startStopScope).dispose()
     }
 
     fun onViewDestroyed() {

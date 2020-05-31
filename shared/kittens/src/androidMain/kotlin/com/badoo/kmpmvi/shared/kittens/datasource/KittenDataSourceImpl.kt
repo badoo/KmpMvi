@@ -11,9 +11,9 @@ import java.net.URL
 
 internal class KittenDataSourceImpl : KittenDataSource {
 
-    override fun load(limit: Int, offset: Int): Maybe<String> =
+    override fun load(limit: Int, page: Int): Maybe<String> =
         maybeFromFunction {
-            val url = URL(makeKittenEndpointUrl(limit = limit, offset = offset))
+            val url = URL(makeKittenEndpointUrl(limit = limit, page = page))
             val connection = url.openConnection() as HttpURLConnection
 
             connection
