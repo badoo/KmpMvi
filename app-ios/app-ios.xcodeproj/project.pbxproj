@@ -18,8 +18,8 @@
 		1F080AA7242E7B4800521AB0 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F080AA6242E7B4800521AB0 /* StringExt.swift */; };
 		1F080AA9242E7EB800521AB0 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F080AA8242E7EB800521AB0 /* RemoteImage.swift */; };
 		1F080AAB242E872600521AB0 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F080AAA242E872600521AB0 /* ActivityIndicator.swift */; };
-		DC6FDEAB246EEDFF00C2828C /* bin in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6FDEAA246EEDFF00C2828C /* bin */; };
-		DC6FDEAD246EEE2300C2828C /* bin in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC6FDEAC246EEE2300C2828C /* bin */; };
+		DC4DEC5124C454D1009F92CE /* Kittens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F080A9C242E709300521AB0 /* Kittens.framework */; };
+		DC4DEC5224C454D1009F92CE /* Kittens.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F080A9C242E709300521AB0 /* Kittens.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCD2B1D9246DFC8C004DE62E /* KittenSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2B1D8246DFC8C004DE62E /* KittenSwiftView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DC6FDEAD246EEE2300C2828C /* bin in Embed Frameworks */,
+				DC4DEC5224C454D1009F92CE /* Kittens.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,14 +46,12 @@
 		1F080A8F242E6B9700521AB0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1F080A92242E6B9700521AB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F080A94242E6B9700521AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F080A9B242E706800521AB0 /* debugFramework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = debugFramework; path = ../shared/kittens/build/bin/iosX64/debugFramework; sourceTree = "<group>"; };
 		1F080A9C242E709300521AB0 /* Kittens.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kittens.framework; path = ../shared/kittens/build/bin/iosX64/debugFramework/Kittens.framework; sourceTree = "<group>"; };
 		1F080AA2242E70FF00521AB0 /* KittenViewProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KittenViewProxy.swift; sourceTree = "<group>"; };
 		1F080AA4242E76B000521AB0 /* RemoteImageUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageUrl.swift; sourceTree = "<group>"; };
 		1F080AA6242E7B4800521AB0 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		1F080AA8242E7EB800521AB0 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		1F080AAA242E872600521AB0 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		DC6FDEAA246EEDFF00C2828C /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bin; path = ../shared/kittens/build/bin; sourceTree = "<group>"; };
 		DC6FDEAC246EEE2300C2828C /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bin; path = ../shared/kittens/build/bin; sourceTree = "<group>"; };
 		DCD2B1D8246DFC8C004DE62E /* KittenSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KittenSwiftView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6FDEAB246EEDFF00C2828C /* bin in Frameworks */,
+				DC4DEC5124C454D1009F92CE /* Kittens.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,9 +117,7 @@
 		1F080A9A242E706700521AB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DC6FDEAA246EEDFF00C2828C /* bin */,
 				1F080A9C242E709300521AB0 /* Kittens.framework */,
-				1F080A9B242E706800521AB0 /* debugFramework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
