@@ -4,5 +4,5 @@ import com.badoo.reaktive.maybe.Maybe
 
 internal interface KittenDataSource {
 
-    fun load(limit: Int, offset: Int): Maybe<String>
+    fun load(limit: Int, page: Int): Maybe<String>
 }

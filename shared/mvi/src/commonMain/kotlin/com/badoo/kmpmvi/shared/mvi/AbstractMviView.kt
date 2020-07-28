@@ -8,7 +8,7 @@ abstract class AbstractMviView<in Model : Any, Event : Any> : MviView<Model, Eve
     private val subject = PublishSubject<Event>()
     override val events: Observable<Event> = subject
 
-    protected fun dispatch(event: Event) {
+    open fun dispatch(event: Event) {
         subject.onNext(event)
     }
 }

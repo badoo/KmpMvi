@@ -17,7 +17,7 @@ import kotlin.native.concurrent.freeze
 
 internal class KittenDataSourceImpl : KittenDataSource {
 
-    override fun load(limit: Int, offset: Int): Maybe<String> =
+    override fun load(limit: Int, page: Int): Maybe<String> =
         maybe<String> { emitter ->
             val callback: (NSData?, NSURLResponse?, NSError?) -> Unit =
                 { data: NSData?, _, error: NSError? ->
@@ -30,7 +30,7 @@ internal class KittenDataSourceImpl : KittenDataSource {
 
             val task =
                 NSURLSession.sharedSession.dataTaskWithURL(
-                    NSURL(string = makeKittenEndpointUrl(limit = limit, offset = offset)),
+                    NSURL(string = makeKittenEndpointUrl(limit = limit, page = page)),
                     callback.freeze()
                 )
             task.resume()

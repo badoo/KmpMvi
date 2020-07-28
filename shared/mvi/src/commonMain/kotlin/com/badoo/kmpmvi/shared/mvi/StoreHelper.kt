@@ -17,6 +17,7 @@ class StoreHelper<in Intent : Any, out State : Any, in Effect : Any>(
     }
 
     private val subject = BehaviorSubject(initialState)
+    val state: State get() = subject.value
 
     fun onIntent(intent: Intent) {
         actor(subject.value, intent).subscribeScoped(isThreadLocal = true, onNext = ::onEffect)

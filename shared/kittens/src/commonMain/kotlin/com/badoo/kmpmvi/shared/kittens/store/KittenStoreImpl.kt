@@ -21,6 +21,7 @@ internal class KittenStoreImpl(
 ) : KittenStore, DisposableScope by DisposableScope() {
 
     private val helper = StoreHelper(State(), ::handleIntent, ::reduce).scope()
+    override val state: State get() = helper.state
 
     init {
         helper.onIntent(Intent.Reload)

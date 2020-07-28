@@ -12,8 +12,13 @@ kotlin {
                 api(project(":shared:mvi"))
                 implementation(Deps.Badoo.Reaktive.Utils)
                 implementation(Deps.Badoo.Reaktive.Reaktive)
-                implementation(Deps.Badoo.Reaktive.Reaktive)
                 implementation(Deps.Jetbrains.Kotlinx.Serialization.RuntimeCommon)
+            }
+        }
+
+        commonTest {
+            dependencies {
+                implementation(Deps.Badoo.Reaktive.ReaktiveTesting)
             }
         }
 
